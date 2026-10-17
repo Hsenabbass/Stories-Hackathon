@@ -29,6 +29,12 @@ Frequency and support count baskets with the product present, once per product/b
 
 One hashed anchor is sampled per transaction. Features contain only the anchor, branch, coarse daypart, order type and optionally weekday. Targets are all remaining unique products. Final basket size is retained only for evaluation slices. Unit prices and costs do not enter the classifier. There is no customer-history model.
 
+## Redundant fields and model boundaries
+
+The raw CSV is never reduced to just classifier columns. Category is determined by product; revenue and gross profit are computed from the other accounting fields; raw time is summarized into daypart. These redundant representations are retained for validation, policy or economics but excluded from classifier inputs. Customer identity and realized basket outcomes are excluded for different reasons—missingness, scope and leakage—not because all excluded fields are mathematically redundant. See the [field-by-field decisions](methodology.md#cleaning-versus-feature-selection).
+
+[The actual cleaning audit](../reports/data_audit.json) records zero removed rows, zero trimmed cells, 132 identical rows retained and 166 repeated transaction/product rows. These duplicate counts overlap and must not be added together as separate groups.
+
 ## New data
 
 Configured time windows must be non-overlapping and strictly ordered, and every source date must fall inside the study window. All three periods must be non-empty. Out-of-vocabulary validation/test products are rejected rather than silently deleted. New categories require an explicit food/drink group. New products need a cold-start eligibility design and fresh evaluation. Variable prices/costs need dated lookups; the present study deliberately requires fixed training values and checks June consistency.

@@ -10,6 +10,8 @@ python -m stories_promo serve --port 8000
 
 The model loads once at server startup. Restart to load a new artifact. `--artifact` selects another JSON bundle. The default host is `127.0.0.1`; nothing is published. Interactive validation and requests are available at `http://127.0.0.1:8000/docs`, with an OpenAPI schema at `/openapi.json`.
 
+The promotion studio UI is served at `/` by the same application. Its assets live under `/assets`, and its requests use the existing same-origin `/options` and `/recommend` endpoints.
+
 | Route | Use |
 | --- | --- |
 | `GET /health` | Check readiness and selected model |
@@ -43,6 +45,8 @@ The five required context fields are:
 | `baseline_probability_overrides` | `{}` | Per-candidate baseline probability for economics; does not change model ranking |
 | `operating_cost_per_opportunity` | `0` | Added expected dollar cost per eligible opportunity |
 | `substitution_loss_per_opportunity` | `0` | Expected lost contribution per opportunity from substitution or related effects |
+
+The staff UI explicitly sends `discounts: [0, 0.1, 0.2, 0.3, 0.4, 0.5]` and selects 0% initially. The original artifact defaults remain frozen for reproduction of the study; UI scenarios do not modify them.
 
 An omitted or null policy-default field uses the saved artifact's configuration. Invalid enum values, non-finite numbers, unknown fields, unsupported models, or products absent from the chosen branch's training catalog produce HTTP 422. CLI errors have exit code 2. API errors do not return a fabricated recommendation.
 
@@ -83,9 +87,11 @@ result = tool.recommend({
 
 `PromotionService` is independent of HTTP and can be used by a notebook, UI backend or batch job. It reads only the artifact at inference time. It never reads future transactions, updates the model or mutates the artifact.
 
-## Use from a UI
+## UI integration
 
 Fetch `/options` on startup and derive controls from the returned catalog. Send the selected context and scenario controls to `/recommend`. Display abstention explicitly, distinguish the probability proxy from a response forecast, and show unprofitable/impossible offers as such. The default policy and period are available in options metadata.
+
+The included studio implements this flow. Product/context changes clear previous results until submitted again. Switching an alternative or discount uses the returned server-calculated data; no financial calculation is reimplemented in JavaScript.
 
 The current adapter assumes same-origin or server-side requests. For a separate browser origin, configure a narrowly allowed origin in the future hosting layer. Authentication, live stock, live prices and event logging should be integrated before an operational trial.
 

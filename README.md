@@ -1,90 +1,108 @@
-# Stories promotion opportunities
+# Stories: better add-on decisions
 
-Identify an under-selling product that complements a given purchase, explain the historical evidence, and calculate how many additional purchases each discount must generate to break even.
+**Team:** Hussein Abbas, Rabih Abdel Khalek, Husein Zahweh.
 
-**Team:** Hussein Abbas, Rabih Abdul Khalek, Hussein Zahwe.
+Stories needs a practical way to give lower-selling products more opportunities without unnecessarily discounting purchases that would happen anyway. Given a customer's product and shopping context, this tool recommends a plausible lower-frequency complement, explains its historical support, and compares the additional purchases needed to pay for an optional discount.
 
-The repository contains a trained model, three simple baselines, a reproducible chronological evaluation, a financial calculator, and a Python/JSON/HTTP interface ready for a UI. No training is required to try the included artifact.
+**Deliverable:** a trained recommendation service, simple comparison baselines, a chronological evaluation, a contribution-based financial calculator, and a working staff UI. It is a business decision-support prototype, not a demonstrated sales-uplift model. The included artifact runs without retraining.
 
-## What the evidence says
+## Reviewer reading order
 
-May validation selected a regularized contextual logistic model with **C = 0.1**. On June's **6,906 transactions**, the fixed under-selling policy recommends on **3,959 opportunities (57.3%)**. Its historical basket-match rate is **1.41%**, versus **1.52%** for the popularity baselines. Context has slightly better probability loss, but **the paired intervals do not establish a recommendation improvement**. There is no measured sales or profit uplift.
+1. This README: problem, outcome, operation and repository navigation.
+2. [Methodology and design decisions](docs/methodology.md): the 15% promotion observation, cleaning, feature choices, learning, recommendation rules, evaluation and economics.
+3. [Frozen experiment protocol](docs/experiment_protocol.md), then [evaluation results](reports/RESULTS.md): what was selected, what was tested, and what the evidence supports.
+4. [Data contract](docs/data_contract.md): source fields, validation rules, redundancy and reproducible audit.
+5. [Staff workflow](docs/ui.md) and [API contract](docs/api.md): how to operate and integrate the tool.
 
-For the selected policy, retrospective exposure implies **1.27** and **2.83 additional units per 1,000 covered opportunities** at 5% and 10% discounts, respectively, before operating costs or substitution. These are conditional accounting hurdles, not forecasts. A low hurdle does not establish that an offer will work.
+For code review, follow `data.py → models.py → training.py → policy.py → economics.py → service.py`; `evaluation.py` and `backtest.py` implement the independent evaluation. Tests cover those boundaries.
 
-Start with [the results](reports/RESULTS.md), [the experiment protocol](docs/experiment_protocol.md), and [methodology and limitations](docs/methodology.md). The model is kept because it won the prespecified May probability criterion, not because it beat every baseline on June.
+## Business reasoning and honest result
 
-## Try it
+The observed 15% discounts included frequently bought products, notably Iced Latte. All 504 such source line records occur at Harbour in Cold Coffee or Desserts. This suggests a question worth testing: **could Stories spend promotional margin on a suitable quieter product instead?** It does not prove the historical promotions were wasteful. See the [verified observation and its design consequences](docs/methodology.md#the-15-discount-observation-and-its-design-consequences).
 
-Use Python 3.12 (tested) or 3.13. From the repository root:
+May selected contextual logistic regression with **C = 0.1** using eligible-candidate probability log loss. On June's **6,906 baskets**, the fixed policy covers **3,959 opportunities (57.3%)**. Its historical match rate is **1.41% (56 matches)**, compared with **1.52% (60 matches)** for popularity baselines. Paired uncertainty intervals do not establish an improvement. We report that result rather than switching models or tuning thresholds after inspecting June.
+
+A match means the suggested item was present in the historical basket. It is **not an accepted offer, an additional sale or profit uplift**. The product's value is making the suggestion and its financial hurdle explicit, ready for a prospective business test.
+
+## Install and run
+
+Use Python 3.12 (tested) or 3.13. Run commands from this repository's root:
 
 ```bash
 python3.12 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.lock
 python -m pip install --no-deps -e .
-python -m stories_promo recommend --request examples/request.json
-```
-
-On Windows, activate with `.venv\Scripts\activate` instead. The provided workspace already has an installed `.venv`.
-
-The example asks for an add-on to **Iced Matcha at Garden on Tuesday afternoon, dine-in**. Its first suggestion is **Almond Croissant**, supported by 40 training co-purchase baskets. The model's historical compatibility probability is 2.06%. Using that as a baseline scenario proxy, the 5% and 10% offers require approximately **2.62** and **6.02 additional purchases per 1,000 opportunities**, respectively. Whole-number thresholds round up. This is a plausibility suggestion; raw basket lift is below one, and the pairing evidence alone does not establish incremental demand.
-
-Inspect [the example request](examples/request.json) and [complete response](examples/response.json). The response includes alternatives, support counts, within-category popularity, prices, margins, break-even thresholds, and assumptions. It can return an explicit abstention.
-
-## Interactive API and future UI
-
-```bash
 python -m stories_promo serve
 ```
 
-Open [the interactive API docs](http://127.0.0.1:8000/docs). Use `GET /options` to populate controls and `POST /recommend` to calculate offers. The server binds to localhost by default. It is a local prototype; external hosting and authentication are not configured.
+On Windows use `.venv\Scripts\activate`. The supplied workspace already has an installed `.venv`. If port 8000 is occupied, use `python -m stories_promo serve --port 8001`.
 
-Controls include anchor product, branch, daypart, weekday, dine-in/takeaway, model choice, number of alternatives, discounts, a ranking discount, a popularity limit, available products, existing basket items, baseline probability scenarios, operating cost, and substitution loss. [API contract and examples](docs/api.md) explain units and defaults.
+Open [the staff tool](http://127.0.0.1:8000/). The UI and API run together; no frontend build, Node installation or external assets are required.
 
-## Reproduce and test
+1. **Order:** search a product; select branch, daypart, weekday and dine-in/takeaway.
+2. **Add-on:** choose a recommendation. “Out of stock” requests alternatives; “Why this pairing?” opens concise supporting evidence.
+3. **Offer:** keep **0% / no discount**, or compare **10%, 20%, 30%, 40% or 50%**. Prices, contribution feasibility and break-even requirements come from the backend. A high discount may be unviable; availability in the menu is not an endorsement.
+4. **New order:** clear the current product and results while retaining context. Stock exclusions last until branch change or page reload.
+
+On narrow screens, the three stages are separate steps. Statistical detail is available on demand, not on the main staff screen. The UI does not submit an order to a POS, track acceptance or apply a live discount. Historical prices and costs need confirmation before operational use.
+
+## Programmatic use and discount versions
 
 ```bash
-# Train on Jan–Apr and select on May; no June model scoring occurs here.
+python -m stories_promo recommend --request examples/request.json
+python -m stories_promo options
+```
+
+[The saved example](examples/response.json) pairs Iced Matcha with Almond Croissant at Garden, Tuesday afternoon. It records 40 training co-purchase baskets. The 10% offer is $4.37 and requires about **6.02 extra purchases per 1,000 matching opportunities**, rounded up to **7 whole purchases**, under the stated baseline assumptions. That is a hurdle, not a forecast.
+
+The **frozen experiment, artifact defaults and original CLI example compare 0%, 5% and 10%**. The **staff UI explicitly requests 0%–50% in ten-point steps and initially selects 0%**. This is an interface scenario expansion, not a retraining or evaluation change. The June results have not been rewritten to imply that 20%–50% offers were evaluated. Pass `"discounts": [0, 0.1, 0.2, 0.3, 0.4, 0.5]` in an API/CLI request to match the UI.
+
+[Interactive API documentation](http://127.0.0.1:8000/docs) exposes advanced scenarios: existing discounts, operating costs, substitution loss, baseline-probability overrides, inventory, known basket exclusions, model comparisons and candidate limits. See [request fields and units](docs/api.md). API discounts are fractions, not whole percentages.
+
+## Reproduce, verify and extend
+
+```bash
+# Fit Jan–Apr; select with May only.
 python -m stories_promo train
-
-# Evaluate the frozen artifact on June; no fit or selection occurs here.
+# Evaluate the saved, frozen artifact on June.
 python -m stories_promo evaluate
-
-# Or run both stages, then regenerate the concrete example and sensitivities.
-python -m stories_promo reproduce
+# Reproduce both stages without overwriting the shipped study.
+python -m stories_promo reproduce --artifact artifacts/local/model.json --reports reports/local
+# Reproduce the example/sensitivity table and descriptive 15% audit.
 python examples/run_demo.py
+python examples/audit_discounts.py
 python -m pytest
 ```
 
-To preserve the shipped results during a new experiment:
+Training/evaluation without output overrides regenerate the shipped paths. Model reproduction does not regenerate this README or the explanatory docs. `run_demo.py` regenerates the original 0%/5%/10% example and 54-row sensitivity table. The discount audit only describes source observations; it does not fit models.
 
-```bash
-python -m stories_promo reproduce --artifact artifacts/local/model.json --reports reports/local
-```
+The suite currently has **32 passing tests**. [Original model verification](reports/verification.json) records the earlier 31-test run, byte-identical reproduction and independent reconciliation of all 6,906 June rows. [UI verification](reports/ui_verification.json) records the later 32-test suite and browser checks. These records refer to different stages, not conflicting evaluation results.
 
-Adjust [the configuration](configs/default.json) before training, not after inspecting June outcomes. The same seed, source, dependencies and configuration reproduce the selected model and metrics; small floating-point differences may occur across platforms. A full study runs locally without network access after installation. Tests also verify that changing June targets cannot change fitted models, evidence, or selection.
+For future experiments, set changes before evaluation and use a new untouched future period. Additional tuning should use forward validation within historical training/development data, not repeated optimization against June. The supplied June backtest was preceded by full-dataset exploration and is not pristine external confirmation.
 
-Verification completed: **31 passing tests**, a second full run with byte-identical model and evaluation reports, independent reconciliation of all 6,906 June prediction rows, and successful live HTTP checks. [Verification record](reports/verification.json) records the checks and the harmless dependency deprecation warning observed during tests.
+## Repository navigation
 
-## Repository map
-
-| Location | Purpose |
+| Location | What to inspect |
 | --- | --- |
-| `src/stories_promo/` | Validation, training, baselines, eligibility, economics, evaluation, service, CLI and API |
-| `configs/default.json` | Frozen split dates, grids, seed and policy rules |
-| `data/raw/` | Original unmodified transaction CSV and data provenance |
-| `artifacts/model.json` | Non-executable JSON containing all six selected family models, training evidence and provenance |
-| `reports/RESULTS.md` | Human-readable evaluation with links to auditable outputs |
-| `reports/*.json`, `reports/*.csv` | Audit, validation trials, metrics, calibration, per-transaction predictions, discount exposure and sensitivity |
-| `examples/` | Ready-to-run request, actual response and sensitivity generator |
-| `tests/` | Data integrity, split isolation, probability models, economics and API tests |
-| `docs/` | Protocol, methodology, data contract, API contract and original hackathon brief |
+| `data/raw/stories_transactions.csv` | Original, unchanged line-level transactions; provenance in `data/raw/README.md` |
+| `docs/reference/` | Original hackathon brief |
+| `configs/default.json` | Split dates, seed, regularization/smoothing grids and frozen candidate policy |
+| `src/stories_promo/data.py` | Validation, basket construction, deterministic masking and split boundaries |
+| `src/stories_promo/models.py`, `training.py` | Three baselines, three logistic feature families, fitting and May selection |
+| `src/stories_promo/policy.py` | Training support, branch/category rarity, compatibility and ranking rules |
+| `src/stories_promo/economics.py` | Rounded prices, existing-discount handling and financial feasibility |
+| `src/stories_promo/evaluation.py`, `backtest.py` | Metrics, uncertainty and frozen June evaluation |
+| `src/stories_promo/service.py`, `api.py`, `cli.py` | Shared inference contract, HTTP endpoints and command-line entry points |
+| `src/stories_promo/web/` | Buildless staff UI; presentation and requests only |
+| `artifacts/model.json` | Ordinary JSON weights, counts, catalogs, selected models and source provenance |
+| `reports/data_audit.json`, `discount_observation.json` | Cleaning outcomes and reproducible descriptive 15% evidence |
+| `reports/validation.json`, `test_metrics.json`, `calibration.json` | Parameter trials, final comparisons and calibration |
+| `reports/test_predictions.csv`, `discount_exposure.csv` | Auditable per-transaction predictions and historical discount exposure |
+| `reports/RESULTS.md` | Human-readable frozen study results |
+| `examples/` | Concrete requests/responses and reproducible supporting analyses |
+| `tests/` | Data validation, leakage isolation, model, economics and service checks |
 
-The source files were moved into `data/raw/` and `docs/reference/` without changing their contents. Word's temporary lock file and local environments are ignored. No customer identity enters the model or reports.
+## What Stories should do next
 
-## Scope and next decision
-
-“Under-selling” means lower observed basket frequency than comparable products in the same branch/category. It does not prove unmet demand. Missing inventory, exposures, rejected offers and randomized discounts prevent estimating causal offer response. These records also lack purchase order, so evaluation is basket completion, not next-item prediction.
-
-The useful next step is a small randomized trial of no suggestion, full-price suggestion, and the same suggestion at a specified discount, measuring total basket contribution per eligible opportunity. [The methodology](docs/methodology.md#pilot-design) specifies the needed logs, guardrails and decision rule.
+Run a small, prospectively designed randomized pilot comparing no suggestion, a full-price suggestion, and the same suggestion with a fixed discount. Measure **total basket contribution per eligible opportunity**, including implementation costs and substitution, rather than only add-on units. Log rejected offers and stock availability as well as purchases. Scale only when the result supports a worthwhile contribution gain. [Pilot design and required logs](docs/methodology.md#pilot-design) explain how.

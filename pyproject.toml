@@ -27,6 +27,9 @@ stories-promo = "stories_promo.cli:main"
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.setuptools.package-data]
+stories_promo = ["web/*.html", "web/*.css", "web/*.js", "web/*.svg"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]

@@ -1,5 +1,5 @@
 {
-  "artifact_sha256": "06749eba9815f0cff9d11c6a246dca4949a72918837e2cec44fe0d0ef3c273b9",
+  "artifact_sha256": "d23d6de90f4c8320fa63da4bfcebfbd7e09d1a04c271f7ba7eb047c2e001a859",
   "caveat": "Chronological backtest. This dataset had been explored in earlier discussion; June is not wholly untouched external confirmation. No causal uplift measured.",
   "models": {
     "anchor_logistic": {

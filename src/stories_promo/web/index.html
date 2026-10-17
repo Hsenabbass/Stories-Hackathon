@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stories · Counter companion</title><link rel="icon" href="/assets/favicon.svg"><link rel="stylesheet" href="/assets/styles.css"><script src="/assets/app.js" defer></script></head>
+<body>
+<header><a class="brand" href="/">stories<span>.</span></a><span class="app-name">Counter companion</span><button id="new-order" class="quiet">New order ↗</button></header>
+<main>
+<div class="title-row"><div><p class="eyebrow">A LITTLE SOMETHING EXTRA</p><h1>Find their perfect pairing.</h1></div><p class="subtitle">One order. A thoughtful add-on.</p></div>
+<nav class="steps" aria-label="Order steps"><button data-step="order" aria-current="step">1 <span>Order</span></button><button data-step="addons" disabled>2 <span>Add-on</span></button><button data-step="offer" disabled>3 <span>Offer</span></button></nav>
+<p id="notice" role="status" hidden></p>
+<div class="workspace" data-active="order">
+<section class="panel order-panel" data-panel="order"><div class="section-title"><span class="step">01</span><h2>The order</h2></div>
+<form id="context-form"><fieldset id="context-fields" disabled>
+<label for="anchor">What are they ordering?</label><input id="anchor" list="products" required placeholder="Search a product" autocomplete="off"><datalist id="products"></datalist>
+<label for="branch">Branch</label><select id="branch"></select>
+<div class="two-fields"><div><label for="daypart">Time of day</label><select id="daypart"></select></div><div><label for="weekday">Day</label><select id="weekday"></select></div></div>
+<label for="order-type">Order type</label><select id="order-type"><option>Dine-in</option><option>Takeaway</option></select>
+<button class="primary" id="find-button" type="submit">Find an add-on <span>→</span></button>
+</fieldset></form><p class="panel-note">Choose the order, then suggest a little extra.</p></section>
+<section class="panel addons-panel" data-panel="addons"><div class="section-title"><span class="step">02</span><h2>Suggested add-ons</h2></div><p id="pairing-context" class="muted">Your next pairing starts with an order.</p><div id="recommendations"></div><div id="empty" class="empty">Ready when you are.<small>Choose a product to find a suitable add-on.</small></div><div id="addon-actions" hidden><button id="evidence-button" class="quiet">Why this pairing?</button><button id="unavailable-button" class="quiet">Out of stock</button></div><button id="continue-button" class="primary mobile-only" hidden>Compare offers <span>→</span></button></section>
+<section class="panel offer-panel" data-panel="offer"><div class="section-title"><span class="step">03</span><h2>Choose an offer</h2></div><div id="offer-empty" class="empty">A simple offer.<small>Select an add-on to compare prices.</small></div><div id="offer-content" hidden><p class="eyebrow">SUGGEST TO THE CUSTOMER</p><h3 id="offer-product"></h3><p id="offer-pitch" class="pitch"></p><div id="offers" aria-label="Discount options"></div><div class="break-even"><span id="break-number"></span><p id="break-copy"></p></div><p class="offer-note">Per 1,000 matching orders. An estimate, not a sales guarantee.</p><button id="calculation-button" class="quiet">How is this calculated?</button></div></section>
+</div>
+</main>
+<dialog id="detail-dialog" aria-labelledby="detail-title"><button id="close-dialog" class="close" aria-label="Close details">×</button><p class="eyebrow">BEHIND THE SUGGESTION</p><h2 id="detail-title"></h2><div id="detail-content"></div><button id="done-button" class="primary">Got it</button></dialog>
+</body></html>

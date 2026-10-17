@@ -52,3 +52,18 @@ def test_api_smoke_and_unknown_values(request_payload):
         assert client.post("/recommend", json={**request_payload, "branch": "Missing"}).status_code == 422
         assert client.post("/recommend", json={**request_payload, "anchor": "Unknown"}).status_code == 422
         assert client.get("/openapi.json").status_code == 200
+
+
+def test_studio_and_packaged_assets_are_served_without_shadowing_api():
+    with TestClient(create_app(ROOT / "artifacts/model.json")) as client:
+        page = client.get("/")
+        assert page.status_code == 200
+        assert "text/html" in page.headers["content-type"]
+        assert 'id="context-form"' in page.text
+        assert page.headers["cache-control"] == "no-cache"
+        for asset in ["styles.css", "app.js", "favicon.svg"]:
+            response = client.get(f"/assets/{asset}")
+            assert response.status_code == 200
+            assert response.content
+        assert client.get("/assets/missing.js").status_code == 404
+        assert client.get("/options").json()["default_model"]

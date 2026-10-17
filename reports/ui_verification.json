@@ -1,0 +1,21 @@
+{
+  "interface": "Counter companion",
+  "backend_tests": "32 passed",
+  "javascript_syntax": "passed",
+  "browser_checks": [
+    "Product and context submission returns real API recommendations",
+    "Evidence opens in a modal with plain-language historical support and limitations",
+    "Almond Croissant 10%: $4.37, 7 whole additional purchases per 1000",
+    "Out of stock removes selected item and fetches replacement",
+    "New order clears product and results while keeping context",
+    "390 x 600 CSS viewport: order, add-on and offer document heights equal 600",
+    "1107 x 769 CSS viewport: all three panels fit with no document overflow",
+    "Optional UI discounts: 0, 10, 20, 30, 40, 50 percent; default 0 percent",
+    "50 percent Almond Croissant displays $2.43 and Not viable"
+  ],
+  "limitations": [
+    "Evidence dialogs may scroll on small screens",
+    "Very small windows or accessibility text enlargement retain natural overflow rather than clipping controls",
+    "Stock exclusions are session-local; live inventory and POS are not connected"
+  ]
+}

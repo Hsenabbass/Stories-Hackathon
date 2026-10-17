@@ -1,0 +1,122 @@
+{
+  "periods": {
+    "full_jan_jun": {
+      "branches": {
+        "Harbour": 504
+      },
+      "categories": {
+        "Cold Coffee": 324,
+        "Desserts": 180
+      },
+      "discounted_line_records": 504,
+      "distinct_discounted_transactions": 458,
+      "products": [
+        {
+          "all_distinct_baskets": 1258,
+          "discounted_line_records": 52,
+          "product": "Brownie"
+        },
+        {
+          "all_distinct_baskets": 1129,
+          "discounted_line_records": 51,
+          "product": "Cheesecake Slice"
+        },
+        {
+          "all_distinct_baskets": 902,
+          "discounted_line_records": 27,
+          "product": "Coffee Frappe"
+        },
+        {
+          "all_distinct_baskets": 1416,
+          "discounted_line_records": 66,
+          "product": "Cold Brew"
+        },
+        {
+          "all_distinct_baskets": 1064,
+          "discounted_line_records": 42,
+          "product": "Frozen Yoghurt Cup"
+        },
+        {
+          "all_distinct_baskets": 1458,
+          "discounted_line_records": 73,
+          "product": "Iced Americano"
+        },
+        {
+          "all_distinct_baskets": 2444,
+          "discounted_line_records": 117,
+          "product": "Iced Latte"
+        },
+        {
+          "all_distinct_baskets": 1052,
+          "discounted_line_records": 41,
+          "product": "Iced Mocha"
+        },
+        {
+          "all_distinct_baskets": 965,
+          "discounted_line_records": 35,
+          "product": "Tiramisu Cup"
+        }
+      ]
+    },
+    "training_jan_apr": {
+      "branches": {
+        "Harbour": 224
+      },
+      "categories": {
+        "Cold Coffee": 145,
+        "Desserts": 79
+      },
+      "discounted_line_records": 224,
+      "distinct_discounted_transactions": 208,
+      "products": [
+        {
+          "all_distinct_baskets": 751,
+          "discounted_line_records": 22,
+          "product": "Brownie"
+        },
+        {
+          "all_distinct_baskets": 692,
+          "discounted_line_records": 26,
+          "product": "Cheesecake Slice"
+        },
+        {
+          "all_distinct_baskets": 537,
+          "discounted_line_records": 9,
+          "product": "Coffee Frappe"
+        },
+        {
+          "all_distinct_baskets": 861,
+          "discounted_line_records": 32,
+          "product": "Cold Brew"
+        },
+        {
+          "all_distinct_baskets": 652,
+          "discounted_line_records": 17,
+          "product": "Frozen Yoghurt Cup"
+        },
+        {
+          "all_distinct_baskets": 856,
+          "discounted_line_records": 29,
+          "product": "Iced Americano"
+        },
+        {
+          "all_distinct_baskets": 1489,
+          "discounted_line_records": 58,
+          "product": "Iced Latte"
+        },
+        {
+          "all_distinct_baskets": 615,
+          "discounted_line_records": 17,
+          "product": "Iced Mocha"
+        },
+        {
+          "all_distinct_baskets": 601,
+          "discounted_line_records": 14,
+          "product": "Tiramisu Cup"
+        }
+      ]
+    }
+  },
+  "purpose": "Descriptive evidence only; not a causal effect or model-selection input.",
+  "source_sha256": "f1672e728c28295b2b802d878fd38a158ba039827b429355e8438ee0463237a1"
+}
