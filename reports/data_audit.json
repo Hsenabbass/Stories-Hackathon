@@ -1,0 +1,41 @@
+{
+  "branches": [
+    "Garden",
+    "Harbour",
+    "Uptown"
+  ],
+  "first_date": "2026-01-01 07:28:45",
+  "identical_rows_retained": 132,
+  "interpretation": "Repeated lines retained; targets and evidence use distinct product presence. Customer ID excluded.",
+  "last_date": "2026-06-30 23:59:04",
+  "max_profit_reconciliation_error_usd": 2.6645352591003757e-15,
+  "max_revenue_reconciliation_error_usd": 0.005000000000000782,
+  "missing_customer_ids": 18691,
+  "products": 45,
+  "repeated_transaction_product_rows": 166,
+  "rows": 51177,
+  "rows_removed": 0,
+  "source_sha256": "f1672e728c28295b2b802d878fd38a158ba039827b429355e8438ee0463237a1",
+  "splits": {
+    "test": {
+      "first_date": "2026-06-01",
+      "last_date": "2026-06-30",
+      "rows": 10413,
+      "transactions": 6906
+    },
+    "train": {
+      "first_date": "2026-01-01",
+      "last_date": "2026-04-30",
+      "rows": 31028,
+      "transactions": 20542
+    },
+    "validation": {
+      "first_date": "2026-05-01",
+      "last_date": "2026-05-31",
+      "rows": 9736,
+      "transactions": 6439
+    }
+  },
+  "transactions": 33887,
+  "trimmed_cells": 0
+}

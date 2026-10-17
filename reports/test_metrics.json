@@ -1,0 +1,312 @@
+{
+  "artifact_sha256": "06749eba9815f0cff9d11c6a246dca4949a72918837e2cec44fe0d0ef3c273b9",
+  "caveat": "Chronological backtest. This dataset had been explored in earlier discussion; June is not wholly untouched external confirmation. No causal uplift measured.",
+  "models": {
+    "anchor_logistic": {
+      "all_nonanchor": {
+        "brier": 0.011284231177601554,
+        "candidate_decisions": 303864,
+        "log_loss": 0.061559208548241214
+      },
+      "coverage": 0.573269620619751,
+      "eligible_candidates": {
+        "brier": 0.014395233244392427,
+        "candidate_decisions": 9516,
+        "log_loss": 0.07630472716652477
+      },
+      "hits_per_1000_all_opportunities": 6.66087460179554,
+      "opportunities": 6906,
+      "policy_brier": 0.011494499615550094,
+      "policy_ece_fixed_bins": 0.0033084190002468654,
+      "policy_hit_rate": 0.011619095731245263,
+      "policy_hit_rate_multi_product_baskets": 0.025177887246852763,
+      "policy_hit_rate_wilson95": [
+        0.008722582656842628,
+        0.015462452201759985
+      ],
+      "policy_hits": 46,
+      "policy_mean_predicted_probability": 0.014927514731492128,
+      "recommendations": 3959,
+      "single_product_fraction": 0.5377932232841007,
+      "unrestricted_top1_hit_rate": 0.029684332464523604
+    },
+    "context_logistic": {
+      "all_nonanchor": {
+        "brier": 0.011281742814670695,
+        "candidate_decisions": 303864,
+        "log_loss": 0.06145651442796333
+      },
+      "coverage": 0.573269620619751,
+      "eligible_candidates": {
+        "brier": 0.014392659796767215,
+        "candidate_decisions": 9516,
+        "log_loss": 0.07615595603251944
+      },
+      "hits_per_1000_all_opportunities": 8.10889081957718,
+      "opportunities": 6906,
+      "policy_brier": 0.013958657540214654,
+      "policy_ece_fixed_bins": 0.0022698430082397627,
+      "policy_hit_rate": 0.01414498610760293,
+      "policy_hit_rate_multi_product_baskets": 0.03065134099616858,
+      "policy_hit_rate_wilson95": [
+        0.010909264540039518,
+        0.018322654027595406
+      ],
+      "policy_hits": 56,
+      "policy_mean_predicted_probability": 0.015570474766014962,
+      "recommendations": 3959,
+      "single_product_fraction": 0.5377932232841007,
+      "unrestricted_top1_hit_rate": 0.027077903272516652
+    },
+    "context_popularity": {
+      "all_nonanchor": {
+        "brier": 0.011289495316274593,
+        "candidate_decisions": 303864,
+        "log_loss": 0.061715451899193
+      },
+      "coverage": 0.573269620619751,
+      "eligible_candidates": {
+        "brier": 0.014396774942386188,
+        "candidate_decisions": 9516,
+        "log_loss": 0.07628662150948298
+      },
+      "hits_per_1000_all_opportunities": 8.688097306689835,
+      "opportunities": 6906,
+      "policy_brier": 0.014944408775288503,
+      "policy_ece_fixed_bins": 0.003215518194175135,
+      "policy_hit_rate": 0.015155342258145996,
+      "policy_hit_rate_multi_product_baskets": 0.03284072249589491,
+      "policy_hit_rate_wilson95": [
+        0.0117926638414523,
+        0.019458008209795555
+      ],
+      "policy_hits": 60,
+      "policy_mean_predicted_probability": 0.011939824063970862,
+      "recommendations": 3959,
+      "single_product_fraction": 0.5377932232841007,
+      "unrestricted_top1_hit_rate": 0.02403706921517521
+    },
+    "global_popularity": {
+      "all_nonanchor": {
+        "brier": 0.011288938667333449,
+        "candidate_decisions": 303864,
+        "log_loss": 0.06168709418576578
+      },
+      "coverage": 0.573269620619751,
+      "eligible_candidates": {
+        "brier": 0.014395783763338551,
+        "candidate_decisions": 9516,
+        "log_loss": 0.07627364810292238
+      },
+      "hits_per_1000_all_opportunities": 8.688097306689835,
+      "opportunities": 6906,
+      "policy_brier": 0.014936913931933537,
+      "policy_ece_fixed_bins": 0.003847503037230538,
+      "policy_hit_rate": 0.015155342258145996,
+      "policy_hit_rate_multi_product_baskets": 0.03284072249589491,
+      "policy_hit_rate_wilson95": [
+        0.0117926638414523,
+        0.019458008209795555
+      ],
+      "policy_hits": 60,
+      "policy_mean_predicted_probability": 0.011307839220915454,
+      "recommendations": 3959,
+      "single_product_fraction": 0.5377932232841007,
+      "unrestricted_top1_hit_rate": 0.025774688676513176
+    },
+    "pair": {
+      "all_nonanchor": {
+        "brier": 0.011289546116976513,
+        "candidate_decisions": 303864,
+        "log_loss": 0.06185594495861191
+      },
+      "coverage": 0.573269620619751,
+      "eligible_candidates": {
+        "brier": 0.014410244279474677,
+        "candidate_decisions": 9516,
+        "log_loss": 0.07679453251158318
+      },
+      "hits_per_1000_all_opportunities": 6.66087460179554,
+      "opportunities": 6906,
+      "policy_brier": 0.011524083531321283,
+      "policy_ece_fixed_bins": 0.006491580224266869,
+      "policy_hit_rate": 0.011619095731245263,
+      "policy_hit_rate_multi_product_baskets": 0.025177887246852763,
+      "policy_hit_rate_wilson95": [
+        0.008722582656842628,
+        0.015462452201759985
+      ],
+      "policy_hits": 46,
+      "policy_mean_predicted_probability": 0.018110675955512138,
+      "recommendations": 3959,
+      "single_product_fraction": 0.5377932232841007,
+      "unrestricted_top1_hit_rate": 0.028236316246741965
+    },
+    "weekday_logistic": {
+      "all_nonanchor": {
+        "brier": 0.011284788719678767,
+        "candidate_decisions": 303864,
+        "log_loss": 0.06157549130989359
+      },
+      "coverage": 0.573269620619751,
+      "eligible_candidates": {
+        "brier": 0.01439555524281952,
+        "candidate_decisions": 9516,
+        "log_loss": 0.07630516137625352
+      },
+      "hits_per_1000_all_opportunities": 8.10889081957718,
+      "opportunities": 6906,
+      "policy_brier": 0.013961264503624112,
+      "policy_ece_fixed_bins": 0.002664304622725292,
+      "policy_hit_rate": 0.01414498610760293,
+      "policy_hit_rate_multi_product_baskets": 0.03065134099616858,
+      "policy_hit_rate_wilson95": [
+        0.010909264540039518,
+        0.018322654027595406
+      ],
+      "policy_hits": 56,
+      "policy_mean_predicted_probability": 0.015755561863517266,
+      "recommendations": 3959,
+      "single_product_fraction": 0.5377932232841007,
+      "unrestricted_top1_hit_rate": 0.0280915146249638
+    }
+  },
+  "selected_before_test": true,
+  "selected_minus_comparators": {
+    "anchor_logistic": {
+      "day_cluster_bootstrap95": [
+        -0.000272845295287895,
+        0.005415699141686495
+      ],
+      "days": 30,
+      "difference_in_hit_rate": 0.002525890376357666,
+      "interpretation": "Paired descriptive uncertainty within this month; not causal uplift or training uncertainty.",
+      "repetitions": 2000
+    },
+    "context_popularity": {
+      "day_cluster_bootstrap95": [
+        -0.0035606953162139244,
+        0.0014560991635191361
+      ],
+      "days": 30,
+      "difference_in_hit_rate": -0.0010103561505430665,
+      "interpretation": "Paired descriptive uncertainty within this month; not causal uplift or training uncertainty.",
+      "repetitions": 2000
+    },
+    "global_popularity": {
+      "day_cluster_bootstrap95": [
+        -0.0040252078891004845,
+        0.0021624822018732103
+      ],
+      "days": 30,
+      "difference_in_hit_rate": -0.0010103561505430665,
+      "interpretation": "Paired descriptive uncertainty within this month; not causal uplift or training uncertainty.",
+      "repetitions": 2000
+    },
+    "pair": {
+      "day_cluster_bootstrap95": [
+        -0.00045808901918976546,
+        0.005429367105009033
+      ],
+      "days": 30,
+      "difference_in_hit_rate": 0.002525890376357666,
+      "interpretation": "Paired descriptive uncertainty within this month; not causal uplift or training uncertainty.",
+      "repetitions": 2000
+    },
+    "weekday_logistic": {
+      "day_cluster_bootstrap95": [
+        -0.0018533503604828729,
+        0.001815411621812947
+      ],
+      "days": 30,
+      "difference_in_hit_rate": 0.0,
+      "interpretation": "Paired descriptive uncertainty within this month; not causal uplift or training uncertainty.",
+      "repetitions": 2000
+    }
+  },
+  "selected_model": "context_logistic",
+  "selected_model_slices": [
+    {
+      "dimension": "branch",
+      "hit_rate": 0.011086474501108648,
+      "hits": 15,
+      "mean_predicted_probability": 0.016611698839417266,
+      "opportunities": 2251,
+      "recommendations": 1353,
+      "value": "Garden"
+    },
+    {
+      "dimension": "branch",
+      "hit_rate": 0.016967126193001062,
+      "hits": 32,
+      "mean_predicted_probability": 0.01506183080108731,
+      "opportunities": 3386,
+      "recommendations": 1886,
+      "value": "Harbour"
+    },
+    {
+      "dimension": "branch",
+      "hit_rate": 0.0125,
+      "hits": 9,
+      "mean_predicted_probability": 0.01494620580287641,
+      "opportunities": 1269,
+      "recommendations": 720,
+      "value": "Uptown"
+    },
+    {
+      "dimension": "daypart",
+      "hit_rate": 0.013360739979445015,
+      "hits": 13,
+      "mean_predicted_probability": 0.015465952096491476,
+      "opportunities": 1721,
+      "recommendations": 973,
+      "value": "afternoon"
+    },
+    {
+      "dimension": "daypart",
+      "hit_rate": 0.011165387299371946,
+      "hits": 16,
+      "mean_predicted_probability": 0.0157070035789309,
+      "opportunities": 2493,
+      "recommendations": 1433,
+      "value": "evening"
+    },
+    {
+      "dimension": "daypart",
+      "hit_rate": 0.02025586353944563,
+      "hits": 19,
+      "mean_predicted_probability": 0.014290970875061086,
+      "opportunities": 1705,
+      "recommendations": 938,
+      "value": "midday"
+    },
+    {
+      "dimension": "daypart",
+      "hit_rate": 0.013008130081300813,
+      "hits": 8,
+      "mean_predicted_probability": 0.017369221787563838,
+      "opportunities": 987,
+      "recommendations": 615,
+      "value": "morning"
+    },
+    {
+      "dimension": "order_type",
+      "hit_rate": 0.013327601031814273,
+      "hits": 31,
+      "mean_predicted_probability": 0.015217381511896883,
+      "opportunities": 4044,
+      "recommendations": 2326,
+      "value": "Dine-in"
+    },
+    {
+      "dimension": "order_type",
+      "hit_rate": 0.015309246785058175,
+      "hits": 25,
+      "mean_predicted_probability": 0.016073411023870846,
+      "opportunities": 2862,
+      "recommendations": 1633,
+      "value": "Takeaway"
+    }
+  ],
+  "source_sha256": "f1672e728c28295b2b802d878fd38a158ba039827b429355e8438ee0463237a1"
+}

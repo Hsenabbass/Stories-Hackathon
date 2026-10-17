@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stories-promo"
+version = "0.1.0"
+description = "Evidence-based promotion candidates and conditional break-even analysis for Stories Coffee"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+  "numpy==2.2.6",
+  "pandas==2.2.3",
+  "scikit-learn==1.7.2",
+  "scipy==1.18.1",
+  "threadpoolctl==3.7.0",
+  "pydantic==2.14.1",
+  "fastapi==0.119.0",
+  "uvicorn==0.37.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==8.4.2", "httpx==0.28.1"]
+
+[project.scripts]
+stories-promo = "stories_promo.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"

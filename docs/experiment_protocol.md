@@ -1,0 +1,15 @@
+# Experiment protocol
+
+This protocol is specified before fitting or evaluating the implementation. Earlier exploratory discussion already inspected the full supplied dataset, so June is a chronological backtest, not a pristine external holdout.
+
+- Train on January–April 2026. Tune/select on May. Evaluate the frozen artifact on June. Do not refit on May after selection in this study.
+- One deterministic SHA-256 anchor sample per transaction, seed 490. Sort distinct products before sampling. Remaining distinct products are multilabel targets. Retain single-product baskets and prevent any transaction from spanning splits.
+- Exclude customer identity, final basket size, purchased quantity, discount, revenue, profit and targets from features. Date controls splits; weekday is an explicit ablation. Branch-specific prices/costs are training-only financial lookups.
+- Compare global popularity, smoothed branch/daypart popularity, smoothed anchor-product pairs, anchor-only L2 logistic models, context logistic models, and context plus weekday logistic models. Context is anchor, branch, daypart and order type.
+- Fit one binary logistic regression per candidate, excluding rows where that candidate is the anchor. Use one-hot features, unweighted classes, LBFGS, tolerance 1e-5, maximum 1,000 iterations. Fail on convergence warnings. C grid: 0.01, 0.1, 1, 10. Baseline smoothing grid: 10, 50, 200 pseudo-observations.
+- Fix candidate rules before fitting: opposite drink/food group, at least 20 training co-purchase baskets, at least 100 candidate baskets, lower half of within-branch/category basket frequency, positive contribution. These are operating heuristics, not statistical significance tests. No June support or popularity information enters eligibility.
+- Select each family's hyperparameter and then the serving family by May binary log loss averaged over the common eligible candidate set. Exact ties favor the earlier/simpler family. Keep the selected artifact frozen for June. Do not optimize any policy thresholds against June.
+- Rank eligible candidates by historical co-purchase probability times full-price unit contribution. Equal candidate rules make coverage identical across models. Report hit rate at that coverage, eligible and all-nonanchor log loss/Brier, unrestricted top-1 match rate, single-product fraction, selected-item calibration, and branch/daypart/order-type slices.
+- Estimate descriptive uncertainty using paired day-cluster bootstrap intervals on June policy hit differences (2,000 replicates, seed 490). These are not causal intervals or guarantees about future periods.
+- Compare 0%, 5%, and 10% discounts on the same selected item. Respect existing stronger discounts. Separate model-based conditional thresholds from retrospective discount exposure on actual matches. Assume one additional unit maximum, rounded customer prices, recorded cost as incremental cost, and expose operating/substitution costs as scenario inputs.
+- Keep measured basket compatibility separate from unmeasured promotion response. A simpler baseline may win; retain it if selected on May.

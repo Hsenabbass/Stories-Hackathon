@@ -1,0 +1,29 @@
+{
+  "seed": 490,
+  "train_start": "2026-01-01",
+  "validation_start": "2026-05-01",
+  "test_start": "2026-06-01",
+  "test_end_exclusive": "2026-07-01",
+  "regularization_c": [0.01, 0.1, 1.0, 10.0],
+  "smoothing_alpha": [10.0, 50.0, 200.0],
+  "max_iter": 1000,
+  "tolerance": 0.00001,
+  "policy": {
+    "min_pair_baskets": 20,
+    "min_product_baskets": 100,
+    "max_popularity_percentile": 0.5,
+    "ranking_discount": 0.0,
+    "discount_options": [0.0, 0.05, 0.1],
+    "category_groups": {
+      "Hot Coffee": "drink",
+      "Cold Coffee": "drink",
+      "Cold Drinks": "drink",
+      "Matcha & Tea": "drink",
+      "Bakery": "food",
+      "Breakfast": "food",
+      "Desserts": "food",
+      "Meals": "food",
+      "Sandwiches": "food"
+    }
+  }
+}

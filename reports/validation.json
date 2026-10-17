@@ -1,0 +1,808 @@
+{
+  "family_winners": [
+    {
+      "metrics": {
+        "all_nonanchor": {
+          "brier": 0.011391405896469985,
+          "candidate_decisions": 283316,
+          "log_loss": 0.06214522784649973
+        },
+        "coverage": 0.5935704301910234,
+        "eligible_candidates": {
+          "brier": 0.015514127163820435,
+          "candidate_decisions": 9272,
+          "log_loss": 0.08158236611986822
+        },
+        "hits_per_1000_all_opportunities": 9.007609877310141,
+        "opportunities": 6439,
+        "policy_brier": 0.014959867439837982,
+        "policy_ece_fixed_bins": 0.0038424579421508045,
+        "policy_hit_rate": 0.015175300889586603,
+        "policy_hit_rate_multi_product_baskets": 0.0319031903190319,
+        "policy_hit_rate_wilson95": [
+          0.011757876754708015,
+          0.019566332601744233
+        ],
+        "policy_hits": 58,
+        "policy_mean_predicted_probability": 0.011332842947435801,
+        "recommendations": 3822,
+        "single_product_fraction": 0.5350209659885076,
+        "unrestricted_top1_hit_rate": 0.024848578971890044
+      },
+      "model": "global_popularity",
+      "parameter": 1.0
+    },
+    {
+      "metrics": {
+        "all_nonanchor": {
+          "brier": 0.011394917203896252,
+          "candidate_decisions": 283316,
+          "log_loss": 0.062326292339083315
+        },
+        "coverage": 0.5935704301910234,
+        "eligible_candidates": {
+          "brier": 0.015512544964236043,
+          "candidate_decisions": 9272,
+          "log_loss": 0.0815930049148142
+        },
+        "hits_per_1000_all_opportunities": 9.784127970181705,
+        "opportunities": 6439,
+        "policy_brier": 0.016236093456441437,
+        "policy_ece_fixed_bins": 0.004516492872733145,
+        "policy_hit_rate": 0.016483516483516484,
+        "policy_hit_rate_multi_product_baskets": 0.034653465346534656,
+        "policy_hit_rate_wilson95": [
+          0.01290530289874632,
+          0.02103271053391626
+        ],
+        "policy_hits": 63,
+        "policy_mean_predicted_probability": 0.01196702361078334,
+        "recommendations": 3822,
+        "single_product_fraction": 0.5350209659885076,
+        "unrestricted_top1_hit_rate": 0.028109954961950612
+      },
+      "model": "context_popularity",
+      "parameter": 200.0
+    },
+    {
+      "metrics": {
+        "all_nonanchor": {
+          "brier": 0.011390943806717216,
+          "candidate_decisions": 283316,
+          "log_loss": 0.06229022214908865
+        },
+        "coverage": 0.5935704301910234,
+        "eligible_candidates": {
+          "brier": 0.01550457190373476,
+          "candidate_decisions": 9272,
+          "log_loss": 0.08121722798929519
+        },
+        "hits_per_1000_all_opportunities": 8.541699021587203,
+        "opportunities": 6439,
+        "policy_brier": 0.014186227668429417,
+        "policy_ece_fixed_bins": 0.003724171473432643,
+        "policy_hit_rate": 0.014390371533228676,
+        "policy_hit_rate_multi_product_baskets": 0.030253025302530254,
+        "policy_hit_rate_wilson95": [
+          0.011072844293683628,
+          0.018683082617042428
+        ],
+        "policy_hits": 55,
+        "policy_mean_predicted_probability": 0.01811454300666132,
+        "recommendations": 3822,
+        "single_product_fraction": 0.5350209659885076,
+        "unrestricted_top1_hit_rate": 0.03121602733343687
+      },
+      "model": "pair",
+      "parameter": 200.0
+    },
+    {
+      "metrics": {
+        "all_nonanchor": {
+          "brier": 0.01138584495694309,
+          "candidate_decisions": 283316,
+          "log_loss": 0.06200034665517994
+        },
+        "coverage": 0.5935704301910234,
+        "eligible_candidates": {
+          "brier": 0.015499382890316129,
+          "candidate_decisions": 9272,
+          "log_loss": 0.08103628658462408
+        },
+        "hits_per_1000_all_opportunities": 8.38639540301289,
+        "opportunities": 6439,
+        "policy_brier": 0.013922136306841493,
+        "policy_ece_fixed_bins": 0.001142266161892413,
+        "policy_hit_rate": 0.0141287284144427,
+        "policy_hit_rate_multi_product_baskets": 0.0297029702970297,
+        "policy_hit_rate_wilson95": [
+          0.01084511526764524,
+          0.018388050827838752
+        ],
+        "policy_hits": 54,
+        "policy_mean_predicted_probability": 0.014941342171549372,
+        "recommendations": 3822,
+        "single_product_fraction": 0.5350209659885076,
+        "unrestricted_top1_hit_rate": 0.03028420562199099
+      },
+      "model": "anchor_logistic",
+      "parameter": 0.1
+    },
+    {
+      "metrics": {
+        "all_nonanchor": {
+          "brier": 0.011387167754319166,
+          "candidate_decisions": 283316,
+          "log_loss": 0.06205211332350473
+        },
+        "coverage": 0.5935704301910234,
+        "eligible_candidates": {
+          "brier": 0.015496290328669355,
+          "candidate_decisions": 9272,
+          "log_loss": 0.08094222723532672
+        },
+        "hits_per_1000_all_opportunities": 9.628824351607392,
+        "opportunities": 6439,
+        "policy_brier": 0.015949281650236236,
+        "policy_ece_fixed_bins": 0.0032878953289269862,
+        "policy_hit_rate": 0.016221873364730507,
+        "policy_hit_rate_multi_product_baskets": 0.034103410341034104,
+        "policy_hit_rate_wilson95": [
+          0.012675279004768676,
+          0.02073997361265184
+        ],
+        "policy_hits": 62,
+        "policy_mean_predicted_probability": 0.015555551685648678,
+        "recommendations": 3822,
+        "single_product_fraction": 0.5350209659885076,
+        "unrestricted_top1_hit_rate": 0.030905420096288244
+      },
+      "model": "context_logistic",
+      "parameter": 0.1
+    },
+    {
+      "metrics": {
+        "all_nonanchor": {
+          "brier": 0.011387831501682816,
+          "candidate_decisions": 283316,
+          "log_loss": 0.06208670542304301
+        },
+        "coverage": 0.5935704301910234,
+        "eligible_candidates": {
+          "brier": 0.015497403479315773,
+          "candidate_decisions": 9272,
+          "log_loss": 0.08100413964106959
+        },
+        "hits_per_1000_all_opportunities": 9.318217114458767,
+        "opportunities": 6439,
+        "policy_brier": 0.015444615544175937,
+        "policy_ece_fixed_bins": 0.0034236067876041503,
+        "policy_hit_rate": 0.015698587127158554,
+        "policy_hit_rate_multi_product_baskets": 0.033003300330033,
+        "policy_hit_rate_wilson95": [
+          0.012216026255177323,
+          0.020153704731759065
+        ],
+        "policy_hits": 60,
+        "policy_mean_predicted_probability": 0.01586709675241178,
+        "recommendations": 3822,
+        "single_product_fraction": 0.5350209659885076,
+        "unrestricted_top1_hit_rate": 0.028886473054822177
+      },
+      "model": "weekday_logistic",
+      "parameter": 0.1
+    }
+  ],
+  "selected_model": "context_logistic",
+  "selection_metric": "May mean binary log loss on the fixed eligible candidate set; smaller is better",
+  "trials": [
+    {
+      "metrics": {
+        "all_nonanchor": {
+          "brier": 0.011391405896469985,
+          "candidate_decisions": 283316,
+          "log_loss": 0.06214522784649973
+        },
+        "coverage": 0.5935704301910234,
+        "eligible_candidates": {
+          "brier": 0.015514127163820435,
+          "candidate_decisions": 9272,
+          "log_loss": 0.08158236611986822
+        },
+        "hits_per_1000_all_opportunities": 9.007609877310141,
+        "opportunities": 6439,
+        "policy_brier": 0.014959867439837982,
+        "policy_ece_fixed_bins": 0.0038424579421508045,
+        "policy_hit_rate": 0.015175300889586603,
+        "policy_hit_rate_multi_product_baskets": 0.0319031903190319,
+        "policy_hit_rate_wilson95": [
+          0.011757876754708015,
+          0.019566332601744233
+        ],
+        "policy_hits": 58,
+        "policy_mean_predicted_probability": 0.011332842947435801,
+        "recommendations": 3822,
+        "single_product_fraction": 0.5350209659885076,
+        "unrestricted_top1_hit_rate": 0.024848578971890044
+      },
+      "model": "global_popularity",
+      "parameter": 1.0
+    },
+    {
+      "metrics": {
+        "all_nonanchor": {
+          "brier": 0.011396886610077466,
+          "candidate_decisions": 283316,
+          "log_loss": 0.06246617225510216
+        },
+        "coverage": 0.5935704301910234,
+        "eligible_candidates": {
+          "brier": 0.015512779952565057,
+          "candidate_decisions": 9272,
+          "log_loss": 0.08162579332810507
+        },
+        "hits_per_1000_all_opportunities": 9.784127970181705,
+        "opportunities": 6439,
+        "policy_brier": 0.016236682711857083,
+        "policy_ece_fixed_bins": 0.004388764966494365,
+        "policy_hit_rate": 0.016483516483516484,
+        "policy_hit_rate_multi_product_baskets": 0.034653465346534656,
+        "policy_hit_rate_wilson95": [
+          0.01290530289874632,
+          0.02103271053391626
+        ],
+        "policy_hits": 63,
+        "policy_mean_predicted_probability": 0.012094751517022119,
+        "recommendations": 3822,
+        "single_product_fraction": 0.5350209659885076,
+        "unrestricted_top1_hit_rate": 0.026091007920484546
+      },
+      "model": "context_popularity",
+      "parameter": 10.0
+    },
+    {
+      "metrics": {
+        "all_nonanchor": {
+          "brier": 0.011396375635288645,
+          "candidate_decisions": 283316,
+          "log_loss": 0.06241366438108454
+        },
+        "coverage": 0.5935704301910234,
+        "eligible_candidates": {
+          "brier": 0.015512707238782052,
+          "candidate_decisions": 9272,
+          "log_loss": 0.08161658905808168
+        },
+        "hits_per_1000_all_opportunities": 9.784127970181705,
+        "opportunities": 6439,
+        "policy_brier": 0.016236517235134834,
+        "policy_ece_fixed_bins": 0.004419158421735148,
+        "policy_hit_rate": 0.016483516483516484,
+        "policy_hit_rate_multi_product_baskets": 0.034653465346534656,
+        "policy_hit_rate_wilson95": [
+          0.01290530289874632,
+          0.02103271053391626
+        ],
+        "policy_hits": 63,
+        "policy_mean_predicted_probability": 0.012064358061781338,
+        "recommendations": 3822,
+        "single_product_fraction": 0.5350209659885076,
+        "unrestricted_top1_hit_rate": 0.026091007920484546
+      },
+      "model": "context_popularity",
+      "parameter": 50.0
+    },
+    {
+      "metrics": {
+        "all_nonanchor": {
+          "brier": 0.011394917203896252,
+          "candidate_decisions": 283316,
+          "log_loss": 0.062326292339083315
+        },
+        "coverage": 0.5935704301910234,
+        "eligible_candidates": {
+          "brier": 0.015512544964236043,
+          "candidate_decisions": 9272,
+          "log_loss": 0.0815930049148142
+        },
+        "hits_per_1000_all_opportunities": 9.784127970181705,
+        "opportunities": 6439,
+        "policy_brier": 0.016236093456441437,
+        "policy_ece_fixed_bins": 0.004516492872733145,
+        "policy_hit_rate": 0.016483516483516484,
+        "policy_hit_rate_multi_product_baskets": 0.034653465346534656,
+        "policy_hit_rate_wilson95": [
+          0.01290530289874632,
+          0.02103271053391626
+        ],
+        "policy_hits": 63,
+        "policy_mean_predicted_probability": 0.01196702361078334,
+        "recommendations": 3822,
+        "single_product_fraction": 0.5350209659885076,
+        "unrestricted_top1_hit_rate": 0.028109954961950612
+      },
+      "model": "context_popularity",
+      "parameter": 200.0
+    },
+    {
+      "metrics": {
+        "all_nonanchor": {
+          "brier": 0.01140209507248941,
+          "candidate_decisions": 283316,
+          "log_loss": 0.06318160468342582
+        },
+        "coverage": 0.5935704301910234,
+        "eligible_candidates": {
+          "brier": 0.015516869016255732,
+          "candidate_decisions": 9272,
+          "log_loss": 0.08154508825403854
+        },
+        "hits_per_1000_all_opportunities": 8.541699021587203,
+        "opportunities": 6439,
+        "policy_brier": 0.01420870483369214,
+        "policy_ece_fixed_bins": 0.006099570502484579,
+        "policy_hit_rate": 0.014390371533228676,
+        "policy_hit_rate_multi_product_baskets": 0.030253025302530254,
+        "policy_hit_rate_wilson95": [
+          0.011072844293683628,
+          0.018683082617042428
+        ],
+        "policy_hits": 55,
+        "policy_mean_predicted_probability": 0.020489942035713256,
+        "recommendations": 3822,
+        "single_product_fraction": 0.5350209659885076,
+        "unrestricted_top1_hit_rate": 0.03137133095201118
+      },
+      "model": "pair",
+      "parameter": 10.0
+    },
+    {
+      "metrics": {
+        "all_nonanchor": {
+          "brier": 0.011398126076193891,
+          "candidate_decisions": 283316,
+          "log_loss": 0.06274724639877247
+        },
+        "coverage": 0.5935704301910234,
+        "eligible_candidates": {
+          "brier": 0.015512947458950916,
+          "candidate_decisions": 9272,
+          "log_loss": 0.08144583721681836
+        },
+        "hits_per_1000_all_opportunities": 8.541699021587203,
+        "opportunities": 6439,
+        "policy_brier": 0.014201500751532477,
+        "policy_ece_fixed_bins": 0.005472258936851148,
+        "policy_hit_rate": 0.014390371533228676,
+        "policy_hit_rate_multi_product_baskets": 0.030253025302530254,
+        "policy_hit_rate_wilson95": [
+          0.011072844293683628,
+          0.018683082617042428
+        ],
+        "policy_hits": 55,
+        "policy_mean_predicted_probability": 0.019862630470079825,
+        "recommendations": 3822,
+        "single_product_fraction": 0.5350209659885076,
+        "unrestricted_top1_hit_rate": 0.03137133095201118
+      },
+      "model": "pair",
+      "parameter": 50.0
+    },
+    {
+      "metrics": {
+        "all_nonanchor": {
+          "brier": 0.011390943806717216,
+          "candidate_decisions": 283316,
+          "log_loss": 0.06229022214908865
+        },
+        "coverage": 0.5935704301910234,
+        "eligible_candidates": {
+          "brier": 0.01550457190373476,
+          "candidate_decisions": 9272,
+          "log_loss": 0.08121722798929519
+        },
+        "hits_per_1000_all_opportunities": 8.541699021587203,
+        "opportunities": 6439,
+        "policy_brier": 0.014186227668429417,
+        "policy_ece_fixed_bins": 0.003724171473432643,
+        "policy_hit_rate": 0.014390371533228676,
+        "policy_hit_rate_multi_product_baskets": 0.030253025302530254,
+        "policy_hit_rate_wilson95": [
+          0.011072844293683628,
+          0.018683082617042428
+        ],
+        "policy_hits": 55,
+        "policy_mean_predicted_probability": 0.01811454300666132,
+        "recommendations": 3822,
+        "single_product_fraction": 0.5350209659885076,
+        "unrestricted_top1_hit_rate": 0.03121602733343687
+      },
+      "model": "pair",
+      "parameter": 200.0
+    },
+    {
+      "metrics": {
+        "all_nonanchor": {
+          "brier": 0.011389452393428276,
+          "candidate_decisions": 283316,
+          "log_loss": 0.06208813986952465
+        },
+        "coverage": 0.5935704301910234,
+        "eligible_candidates": {
+          "brier": 0.015510293613513419,
+          "candidate_decisions": 9272,
+          "log_loss": 0.08142042240854748
+        },
+        "hits_per_1000_all_opportunities": 9.162913495884453,
+        "opportunities": 6439,
+        "policy_brier": 0.015210518506513296,
+        "policy_ece_fixed_bins": 0.004704033401781861,
+        "policy_hit_rate": 0.01543694400837258,
+        "policy_hit_rate_multi_product_baskets": 0.032453245324532455,
+        "policy_hit_rate_wilson95": [
+          0.011986810225430156,
+          0.019860159946264173
+        ],
+        "policy_hits": 59,
+        "policy_mean_predicted_probability": 0.011758209213540838,
+        "recommendations": 3822,
+        "single_product_fraction": 0.5350209659885076,
+        "unrestricted_top1_hit_rate": 0.028731169436247865
+      },
+      "model": "anchor_logistic",
+      "parameter": 0.01
+    },
+    {
+      "metrics": {
+        "all_nonanchor": {
+          "brier": 0.01138584495694309,
+          "candidate_decisions": 283316,
+          "log_loss": 0.06200034665517994
+        },
+        "coverage": 0.5935704301910234,
+        "eligible_candidates": {
+          "brier": 0.015499382890316129,
+          "candidate_decisions": 9272,
+          "log_loss": 0.08103628658462408
+        },
+        "hits_per_1000_all_opportunities": 8.38639540301289,
+        "opportunities": 6439,
+        "policy_brier": 0.013922136306841493,
+        "policy_ece_fixed_bins": 0.001142266161892413,
+        "policy_hit_rate": 0.0141287284144427,
+        "policy_hit_rate_multi_product_baskets": 0.0297029702970297,
+        "policy_hit_rate_wilson95": [
+          0.01084511526764524,
+          0.018388050827838752
+        ],
+        "policy_hits": 54,
+        "policy_mean_predicted_probability": 0.014941342171549372,
+        "recommendations": 3822,
+        "single_product_fraction": 0.5350209659885076,
+        "unrestricted_top1_hit_rate": 0.03028420562199099
+      },
+      "model": "anchor_logistic",
+      "parameter": 0.1
+    },
+    {
+      "metrics": {
+        "all_nonanchor": {
+          "brier": 0.011395708560177284,
+          "candidate_decisions": 283316,
+          "log_loss": 0.06246880858367966
+        },
+        "coverage": 0.5935704301910234,
+        "eligible_candidates": {
+          "brier": 0.015510846087795814,
+          "candidate_decisions": 9272,
+          "log_loss": 0.08139350361606017
+        },
+        "hits_per_1000_all_opportunities": 8.541699021587203,
+        "opportunities": 6439,
+        "policy_brier": 0.01419748286613339,
+        "policy_ece_fixed_bins": 0.0050591818427545236,
+        "policy_hit_rate": 0.014390371533228676,
+        "policy_hit_rate_multi_product_baskets": 0.030253025302530254,
+        "policy_hit_rate_wilson95": [
+          0.011072844293683628,
+          0.018683082617042428
+        ],
+        "policy_hits": 55,
+        "policy_mean_predicted_probability": 0.0194495533759832,
+        "recommendations": 3822,
+        "single_product_fraction": 0.5350209659885076,
+        "unrestricted_top1_hit_rate": 0.03152663457058549
+      },
+      "model": "anchor_logistic",
+      "parameter": 1.0
+    },
+    {
+      "metrics": {
+        "all_nonanchor": {
+          "brier": 0.011402180690777974,
+          "candidate_decisions": 283316,
+          "log_loss": 0.06297999663433564
+        },
+        "coverage": 0.5935704301910234,
+        "eligible_candidates": {
+          "brier": 0.01551727709956314,
+          "candidate_decisions": 9272,
+          "log_loss": 0.08155525679231437
+        },
+        "hits_per_1000_all_opportunities": 8.541699021587203,
+        "opportunities": 6439,
+        "policy_brier": 0.014209118709647672,
+        "policy_ece_fixed_bins": 0.006098915979223873,
+        "policy_hit_rate": 0.014390371533228676,
+        "policy_hit_rate_multi_product_baskets": 0.030253025302530254,
+        "policy_hit_rate_wilson95": [
+          0.011072844293683628,
+          0.018683082617042428
+        ],
+        "policy_hits": 55,
+        "policy_mean_predicted_probability": 0.020489287512452548,
+        "recommendations": 3822,
+        "single_product_fraction": 0.5350209659885076,
+        "unrestricted_top1_hit_rate": 0.03121602733343687
+      },
+      "model": "anchor_logistic",
+      "parameter": 10.0
+    },
+    {
+      "metrics": {
+        "all_nonanchor": {
+          "brier": 0.011388821368844204,
+          "candidate_decisions": 283316,
+          "log_loss": 0.062064681824748544
+        },
+        "coverage": 0.5935704301910234,
+        "eligible_candidates": {
+          "brier": 0.015508568756969321,
+          "candidate_decisions": 9272,
+          "log_loss": 0.08135662857684499
+        },
+        "hits_per_1000_all_opportunities": 9.318217114458767,
+        "opportunities": 6439,
+        "policy_brier": 0.015463313372933626,
+        "policy_ece_fixed_bins": 0.0038288813184636896,
+        "policy_hit_rate": 0.015698587127158554,
+        "policy_hit_rate_multi_product_baskets": 0.033003300330033,
+        "policy_hit_rate_wilson95": [
+          0.012216026255177323,
+          0.020153704731759065
+        ],
+        "policy_hits": 60,
+        "policy_mean_predicted_probability": 0.01186970580869487,
+        "recommendations": 3822,
+        "single_product_fraction": 0.5350209659885076,
+        "unrestricted_top1_hit_rate": 0.028731169436247865
+      },
+      "model": "context_logistic",
+      "parameter": 0.01
+    },
+    {
+      "metrics": {
+        "all_nonanchor": {
+          "brier": 0.011387167754319166,
+          "candidate_decisions": 283316,
+          "log_loss": 0.06205211332350473
+        },
+        "coverage": 0.5935704301910234,
+        "eligible_candidates": {
+          "brier": 0.015496290328669355,
+          "candidate_decisions": 9272,
+          "log_loss": 0.08094222723532672
+        },
+        "hits_per_1000_all_opportunities": 9.628824351607392,
+        "opportunities": 6439,
+        "policy_brier": 0.015949281650236236,
+        "policy_ece_fixed_bins": 0.0032878953289269862,
+        "policy_hit_rate": 0.016221873364730507,
+        "policy_hit_rate_multi_product_baskets": 0.034103410341034104,
+        "policy_hit_rate_wilson95": [
+          0.012675279004768676,
+          0.02073997361265184
+        ],
+        "policy_hits": 62,
+        "policy_mean_predicted_probability": 0.015555551685648678,
+        "recommendations": 3822,
+        "single_product_fraction": 0.5350209659885076,
+        "unrestricted_top1_hit_rate": 0.030905420096288244
+      },
+      "model": "context_logistic",
+      "parameter": 0.1
+    },
+    {
+      "metrics": {
+        "all_nonanchor": {
+          "brier": 0.011399083183376416,
+          "candidate_decisions": 283316,
+          "log_loss": 0.06257015176735903
+        },
+        "coverage": 0.5935704301910234,
+        "eligible_candidates": {
+          "brier": 0.015509980917637556,
+          "candidate_decisions": 9272,
+          "log_loss": 0.08128080872383389
+        },
+        "hits_per_1000_all_opportunities": 9.318217114458767,
+        "opportunities": 6439,
+        "policy_brier": 0.015475890961926631,
+        "policy_ece_fixed_bins": 0.004616671767257826,
+        "policy_hit_rate": 0.015698587127158554,
+        "policy_hit_rate_multi_product_baskets": 0.033003300330033,
+        "policy_hit_rate_wilson95": [
+          0.012216026255177323,
+          0.020153704731759065
+        ],
+        "policy_hits": 60,
+        "policy_mean_predicted_probability": 0.02031525889441638,
+        "recommendations": 3822,
+        "single_product_fraction": 0.5350209659885076,
+        "unrestricted_top1_hit_rate": 0.027022829631930423
+      },
+      "model": "context_logistic",
+      "parameter": 1.0
+    },
+    {
+      "metrics": {
+        "all_nonanchor": {
+          "brier": 0.011406133154921866,
+          "candidate_decisions": 283316,
+          "log_loss": 0.06310262968637367
+        },
+        "coverage": 0.5935704301910234,
+        "eligible_candidates": {
+          "brier": 0.015517289005711608,
+          "candidate_decisions": 9272,
+          "log_loss": 0.08144293903970022
+        },
+        "hits_per_1000_all_opportunities": 9.162913495884453,
+        "opportunities": 6439,
+        "policy_brier": 0.01523617961484799,
+        "policy_ece_fixed_bins": 0.005970004927484997,
+        "policy_hit_rate": 0.01543694400837258,
+        "policy_hit_rate_multi_product_baskets": 0.032453245324532455,
+        "policy_hit_rate_wilson95": [
+          0.011986810225430156,
+          0.019860159946264173
+        ],
+        "policy_hits": 59,
+        "policy_mean_predicted_probability": 0.021406948935857577,
+        "recommendations": 3822,
+        "single_product_fraction": 0.5350209659885076,
+        "unrestricted_top1_hit_rate": 0.026091007920484546
+      },
+      "model": "context_logistic",
+      "parameter": 10.0
+    },
+    {
+      "metrics": {
+        "all_nonanchor": {
+          "brier": 0.011388587781419176,
+          "candidate_decisions": 283316,
+          "log_loss": 0.06205651031183472
+        },
+        "coverage": 0.5935704301910234,
+        "eligible_candidates": {
+          "brier": 0.01550825603775133,
+          "candidate_decisions": 9272,
+          "log_loss": 0.08134799680985567
+        },
+        "hits_per_1000_all_opportunities": 8.697002640161516,
+        "opportunities": 6439,
+        "policy_brier": 0.014437775944227306,
+        "policy_ece_fixed_bins": 0.0030756773008215658,
+        "policy_hit_rate": 0.014652014652014652,
+        "policy_hit_rate_multi_product_baskets": 0.030803080308030802,
+        "policy_hit_rate_wilson95": [
+          0.011300886214689793,
+          0.01897780151127833
+        ],
+        "policy_hits": 56,
+        "policy_mean_predicted_probability": 0.011862654796881379,
+        "recommendations": 3822,
+        "single_product_fraction": 0.5350209659885076,
+        "unrestricted_top1_hit_rate": 0.02904177667339649
+      },
+      "model": "weekday_logistic",
+      "parameter": 0.01
+    },
+    {
+      "metrics": {
+        "all_nonanchor": {
+          "brier": 0.011387831501682816,
+          "candidate_decisions": 283316,
+          "log_loss": 0.06208670542304301
+        },
+        "coverage": 0.5935704301910234,
+        "eligible_candidates": {
+          "brier": 0.015497403479315773,
+          "candidate_decisions": 9272,
+          "log_loss": 0.08100413964106959
+        },
+        "hits_per_1000_all_opportunities": 9.318217114458767,
+        "opportunities": 6439,
+        "policy_brier": 0.015444615544175937,
+        "policy_ece_fixed_bins": 0.0034236067876041503,
+        "policy_hit_rate": 0.015698587127158554,
+        "policy_hit_rate_multi_product_baskets": 0.033003300330033,
+        "policy_hit_rate_wilson95": [
+          0.012216026255177323,
+          0.020153704731759065
+        ],
+        "policy_hits": 60,
+        "policy_mean_predicted_probability": 0.01586709675241178,
+        "recommendations": 3822,
+        "single_product_fraction": 0.5350209659885076,
+        "unrestricted_top1_hit_rate": 0.028886473054822177
+      },
+      "model": "weekday_logistic",
+      "parameter": 0.1
+    },
+    {
+      "metrics": {
+        "all_nonanchor": {
+          "brier": 0.011400817011322732,
+          "candidate_decisions": 283316,
+          "log_loss": 0.06264726755938231
+        },
+        "coverage": 0.5935704301910234,
+        "eligible_candidates": {
+          "brier": 0.015515387571393448,
+          "candidate_decisions": 9272,
+          "log_loss": 0.08144330227489953
+        },
+        "hits_per_1000_all_opportunities": 9.47352073303308,
+        "opportunities": 6439,
+        "policy_brier": 0.015742347044943147,
+        "policy_ece_fixed_bins": 0.004799161464517011,
+        "policy_hit_rate": 0.01596023024594453,
+        "policy_hit_rate_multi_product_baskets": 0.03355335533553355,
+        "policy_hit_rate_wilson95": [
+          0.0124455180289324,
+          0.02044697377324605
+        ],
+        "policy_hits": 61,
+        "policy_mean_predicted_probability": 0.020759391710461546,
+        "recommendations": 3822,
+        "single_product_fraction": 0.5350209659885076,
+        "unrestricted_top1_hit_rate": 0.02578040068333592
+      },
+      "model": "weekday_logistic",
+      "parameter": 1.0
+    },
+    {
+      "metrics": {
+        "all_nonanchor": {
+          "brier": 0.011408430566497922,
+          "candidate_decisions": 283316,
+          "log_loss": 0.06319488319978334
+        },
+        "coverage": 0.5935704301910234,
+        "eligible_candidates": {
+          "brier": 0.015523844458404325,
+          "candidate_decisions": 9272,
+          "log_loss": 0.08161429627972688
+        },
+        "hits_per_1000_all_opportunities": 9.628824351607392,
+        "opportunities": 6439,
+        "policy_brier": 0.016003995983292718,
+        "policy_ece_fixed_bins": 0.00568459319091166,
+        "policy_hit_rate": 0.016221873364730507,
+        "policy_hit_rate_multi_product_baskets": 0.034103410341034104,
+        "policy_hit_rate_wilson95": [
+          0.012675279004768676,
+          0.02073997361265184
+        ],
+        "policy_hits": 62,
+        "policy_mean_predicted_probability": 0.021906466555642167,
+        "recommendations": 3822,
+        "single_product_fraction": 0.5350209659885076,
+        "unrestricted_top1_hit_rate": 0.02500388259046436
+      },
+      "model": "weekday_logistic",
+      "parameter": 10.0
+    }
+  ]
+}

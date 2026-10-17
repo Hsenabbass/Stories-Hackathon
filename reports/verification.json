@@ -1,0 +1,27 @@
+{
+  "tests_passed": 31,
+  "pytest_command": "python -m pytest",
+  "known_test_warning": "Dependency deprecation warning from Starlette TestClient / AnyIO; no failed checks.",
+  "reproduction_artifact_byte_identical": true,
+  "reproduction_reports_byte_identical": [
+    "RESULTS.md",
+    "calibration.json",
+    "data_audit.json",
+    "discount_exposure.csv",
+    "recommendation_distribution.csv",
+    "test_metrics.json",
+    "test_predictions.csv",
+    "validation.json"
+  ],
+  "original_source_files_unchanged": true,
+  "test_transactions_independently_reconciled": 6906,
+  "test_covered_opportunities_independently_reconciled": 3959,
+  "test_matches_independently_reconciled": 56,
+  "live_http_checks": {
+    "/health": 200,
+    "/options": 200,
+    "/openapi.json": 200,
+    "/docs": 200,
+    "POST /recommend": 200
+  }
+}

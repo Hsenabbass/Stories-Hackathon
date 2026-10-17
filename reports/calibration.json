@@ -1,0 +1,133 @@
+{
+  "anchor_logistic": [
+    {
+      "count": 56,
+      "lower": 0,
+      "mean_predicted": 0.00804422292292273,
+      "observed": 0.0,
+      "upper": 0.01
+    },
+    {
+      "count": 3635,
+      "lower": 0.01,
+      "mean_predicted": 0.014628935934429413,
+      "observed": 0.012104539202200825,
+      "upper": 0.02
+    },
+    {
+      "count": 268,
+      "lower": 0.02,
+      "mean_predicted": 0.02041556797254757,
+      "observed": 0.007462686567164179,
+      "upper": 0.04
+    }
+  ],
+  "context_logistic": [
+    {
+      "count": 374,
+      "lower": 0,
+      "mean_predicted": 0.00890000150940111,
+      "observed": 0.013368983957219251,
+      "upper": 0.01
+    },
+    {
+      "count": 2941,
+      "lower": 0.01,
+      "mean_predicted": 0.01488799626149076,
+      "observed": 0.01394083645018701,
+      "upper": 0.02
+    },
+    {
+      "count": 644,
+      "lower": 0.02,
+      "mean_predicted": 0.022561043523436193,
+      "observed": 0.015527950310559006,
+      "upper": 0.04
+    }
+  ],
+  "context_popularity": [
+    {
+      "count": 890,
+      "lower": 0,
+      "mean_predicted": 0.008281149268673335,
+      "observed": 0.014606741573033709,
+      "upper": 0.01
+    },
+    {
+      "count": 2979,
+      "lower": 0.01,
+      "mean_predicted": 0.01277459091596938,
+      "observed": 0.015105740181268883,
+      "upper": 0.02
+    },
+    {
+      "count": 90,
+      "lower": 0.02,
+      "mean_predicted": 0.020489269794095485,
+      "observed": 0.022222222222222223,
+      "upper": 0.04
+    }
+  ],
+  "global_popularity": [
+    {
+      "count": 839,
+      "lower": 0,
+      "mean_predicted": 0.009457026055443206,
+      "observed": 0.011918951132300357,
+      "upper": 0.01
+    },
+    {
+      "count": 3120,
+      "lower": 0.01,
+      "mean_predicted": 0.011805541863810078,
+      "observed": 0.016025641025641024,
+      "upper": 0.02
+    }
+  ],
+  "pair": [
+    {
+      "count": 151,
+      "lower": 0,
+      "mean_predicted": 0.009323876541354477,
+      "observed": 0.0,
+      "upper": 0.01
+    },
+    {
+      "count": 2451,
+      "lower": 0.01,
+      "mean_predicted": 0.016224382182207397,
+      "observed": 0.011015911872705019,
+      "upper": 0.02
+    },
+    {
+      "count": 1357,
+      "lower": 0.02,
+      "mean_predicted": 0.022495431113881855,
+      "observed": 0.01400147383935151,
+      "upper": 0.04
+    }
+  ],
+  "weekday_logistic": [
+    {
+      "count": 329,
+      "lower": 0,
+      "mean_predicted": 0.00885757966002343,
+      "observed": 0.015197568389057751,
+      "upper": 0.01
+    },
+    {
+      "count": 2954,
+      "lower": 0.01,
+      "mean_predicted": 0.014827967076635988,
+      "observed": 0.013540961408259987,
+      "upper": 0.02
+    },
+    {
+      "count": 676,
+      "lower": 0.02,
+      "mean_predicted": 0.023166140480968097,
+      "observed": 0.016272189349112426,
+      "upper": 0.04
+    }
+  ]
+}

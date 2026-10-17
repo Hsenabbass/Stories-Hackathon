@@ -1,0 +1,9 @@
+{
+  "anchor": "Iced Matcha",
+  "branch": "Garden",
+  "daypart": "afternoon",
+  "weekday": "Tuesday",
+  "order_type": "Dine-in",
+  "top_k": 3,
+  "discounts": [0.0, 0.05, 0.1]
+}
